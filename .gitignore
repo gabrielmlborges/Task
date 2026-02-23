@@ -1,0 +1,16 @@
+# Compilação
+bin/
+obj/
+
+# Banco de dados local
+*.db
+*.db-shm
+*.db-wal
+
+# Configurações do VS Code / IDEs
+.vscode/
+.idea/
+*.user
+
+# Ferramentas locais
+.config/dotnet-tools.json
