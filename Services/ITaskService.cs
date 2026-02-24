@@ -1,5 +1,7 @@
 using Task.Models;
 
+namespace Task.Services;
+
 public interface ITaskService
 {
     Task<IEnumerable<TaskItem>> GetAllTasksAsync();

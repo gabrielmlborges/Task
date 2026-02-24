@@ -1,5 +1,7 @@
 using Task.Models;
 
+namespace Task.Services;
+
     public interface IUserService
     {
         Task<IEnumerable<User>> GetAllUsersAsync();

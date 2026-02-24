@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Task.Data;
 using Task.Models;
 
+namespace Task.Services;
 public class TaskService : ITaskService
 {
     private readonly AppDbContext _context;

@@ -1,5 +1,7 @@
 using Task.Models;
 
+namespace Task.Services;
+
 public interface IProjectService
 {
     Task<IEnumerable<Project>> GetAllProjectsAsync();

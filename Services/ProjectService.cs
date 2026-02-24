@@ -2,6 +2,7 @@
 using Task.Data;
 using Task.Models;
 
+namespace Task.Services;
 public class ProjectService : IProjectService
 {
     private readonly AppDbContext _context;
