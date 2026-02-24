@@ -3,13 +3,12 @@ using Task.Models;
 
 namespace Task.Controllers;
 
-
 [ApiController]
 [Route("[controller]")]
 public class ProjectController : ControllerBase
 {
     private readonly IProjectService _projectService;
-    
+
     public ProjectController(IProjectService projectService)
     {
         _projectService = projectService;
@@ -24,12 +23,13 @@ public class ProjectController : ControllerBase
 
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
-    {  var task = await _projectService.GetProjectByIdAsync(id)}
-    retunr Ok(Project);
+    {
+        var project = await _projectService.GetProjectByIdAsync(id);
+        return Ok(project);
+    }
 
     [HttpPost]
-    
-    public async Task<IactionResult> CreateProject([fromBody] Project project)
+    public async Task<IActionResult> CreateProject([FromBody] Project project)
     {
         if (project == null) return BadRequest("invalid data");
         var createdProject = await _projectService.CreateProjectAsync(project);
