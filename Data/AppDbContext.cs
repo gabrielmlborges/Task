@@ -29,7 +29,7 @@ public class AppDbContext : DbContext
         // 3. Relacionamentos de "Pessoas" na Task (Responsável e Finalizador)
         // Como a tarefa pode ter um usuário ativo e um que a concluiu, 
         // configuramos as chaves estrangeiras manualmente
-        
+
         // Usuário que está fazendo agora (ActiveUser)
         modelBuilder.Entity<TaskItem>()
             .HasOne(t => t.ActiveUser)
