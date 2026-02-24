@@ -3,6 +3,7 @@ using Task.Data;
 using Task.Models;
 
 namespace Task.Services;
+
 public class UserService : IUserService
 {
     private readonly AppDbContext _context;
@@ -12,16 +13,16 @@ public class UserService : IUserService
     }
     public async Task<IEnumerable<User>> GetAllUsersAsync()
     {
-        return await _context.User.ToListAsync();
+        return await _context.Users.ToListAsync();
     }
     public async Task<User?> GetUserByIdAsync(int id)
     {
-        var user = await _context.User.FindAsync(id);
+        var user = await _context.Users.FindAsync(id);
         return user;
     }
     public async Task<User> CreateUserAsync(User user)
     {
-        _context.User.Add(user);
+        _context.Users.Add(user);
         await _context.SaveChangesAsync();
         return user;
     }
